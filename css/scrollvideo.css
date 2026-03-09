@@ -1,0 +1,14 @@
+.sv-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300vh;
+}
+
+.sv-wrapper video {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
