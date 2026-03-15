@@ -6,7 +6,7 @@ A WordPress plugin that creates scroll-driven video animations using GSAP Scroll
 
 - **Custom Post Type** — Each scroll video is managed as a separate entry.
 - **Unique Shortcodes** — Every scroll video generates `[scrollvideo id="123"]`.
-- **GSAP ScrollTrigger** — Loaded via CDN (no bundled files).
+- **GSAP ScrollTrigger** — Bundled locally (v3.12.5).
 - **Configurable** — Scroll height, scrub speed, pin, start/end triggers.
 - **Media Library** — Upload or select videos directly.
 - **Lazy Loading** — Assets enqueued only when shortcode is present.
@@ -24,12 +24,11 @@ A WordPress plugin that creates scroll-driven video animations using GSAP Scroll
 3. Publish and copy the shortcode.
 4. Paste `[scrollvideo id="123"]` anywhere on your site.
 
-## Third-Party Services
+## Third-Party Libraries
 
-GSAP & ScrollTrigger are loaded from the CloudFlare CDN only on pages using the shortcode.
+GSAP & ScrollTrigger v3.12.5 are bundled locally in `vendor/gsap/`. Unminified source: [github.com/greensock/GSAP](https://github.com/greensock/GSAP)
 
 - [GSAP License](https://gsap.com/community/standard-license/)
-- [CloudFlare Privacy](https://www.cloudflare.com/privacypolicy/)
 
 ## Author
 

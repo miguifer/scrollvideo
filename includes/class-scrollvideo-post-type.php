@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class SV_Post_Type {
+class Scrollvideo_Post_Type {
 
     public static function register() {
         add_action( 'init', array( __CLASS__, 'register_post_type' ) );

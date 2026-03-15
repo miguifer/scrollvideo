@@ -2,7 +2,7 @@
 Contributors: miguifer
 Tags: video, scroll, animation, gsap, scrolltrigger
 Requires at least: 5.8
-Tested up to: 6.7
+Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 1.0.0
 License: GPLv2 or later
@@ -33,17 +33,16 @@ Each scroll video is managed as its own custom post type entry, giving you full 
 4. Copy the generated shortcode from the sidebar.
 5. Paste the shortcode into any page, post, or widget.
 
-= Third-Party Services =
+= Third-Party Libraries =
 
-This plugin loads the GSAP (GreenSock Animation Platform) and ScrollTrigger libraries from the CloudFlare CDN:
+This plugin includes the GSAP (GreenSock Animation Platform) library v3.12.5 to provide scroll-driven video playback. GSAP is developed by GreenSock Inc. The minified files are bundled locally inside the `vendor/gsap/` folder. The unminified source code is available at:
 
-* **Service:** GSAP by GreenSock via cdnjs (CloudFlare)
-* **URLs loaded:**
-  * `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js`
-  * `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js`
-* **When:** Only on front-end pages where a `[scrollvideo]` shortcode is present.
-* **GSAP Terms:** [https://gsap.com/community/standard-license/](https://gsap.com/community/standard-license/)
-* **CloudFlare CDN Privacy:** [https://www.cloudflare.com/privacypolicy/](https://www.cloudflare.com/privacypolicy/)
+* **GSAP source:** [https://github.com/greensock/GSAP](https://github.com/greensock/GSAP)
+* **GSAP on npm:** [https://www.npmjs.com/package/gsap](https://www.npmjs.com/package/gsap)
+* **GreenSock website:** [https://gsap.com/](https://gsap.com/)
+* **GSAP Standard License:** [https://gsap.com/community/standard-license/](https://gsap.com/community/standard-license/)
+
+GSAP's Standard License ("No Charge") permits free use in products that are themselves free. This plugin is distributed under GPLv2 or later.
 
 == Installation ==
 

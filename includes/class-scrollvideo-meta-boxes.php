@@ -3,10 +3,10 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class SV_Meta_Boxes {
+class Scrollvideo_Meta_Boxes {
 
-    const NONCE_ACTION = 'sv_save_meta';
-    const NONCE_NAME   = 'sv_meta_nonce';
+    const NONCE_ACTION = 'scrollvideo_save_meta';
+    const NONCE_NAME   = 'scrollvideo_meta_nonce';
 
     public static function register() {
         add_action( 'add_meta_boxes', array( __CLASS__, 'add_meta_boxes' ) );
@@ -16,7 +16,7 @@ class SV_Meta_Boxes {
 
     public static function add_meta_boxes() {
         add_meta_box(
-            'sv_video_settings',
+            'scrollvideo_video_settings',
             __( 'Video Settings', 'scrollvideo' ),
             array( __CLASS__, 'render_settings_box' ),
             'scrollvideo',
@@ -25,7 +25,7 @@ class SV_Meta_Boxes {
         );
 
         add_meta_box(
-            'sv_shortcode_box',
+            'scrollvideo_shortcode_box',
             __( 'Shortcode', 'scrollvideo' ),
             array( __CLASS__, 'render_shortcode_box' ),
             'scrollvideo',

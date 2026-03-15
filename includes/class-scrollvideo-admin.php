@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class SV_Admin {
+class Scrollvideo_Admin {
 
     public static function register() {
         add_filter( 'manage_scrollvideo_posts_columns', array( __CLASS__, 'add_columns' ) );

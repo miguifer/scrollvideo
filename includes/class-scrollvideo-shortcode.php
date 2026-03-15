@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class SV_Shortcode {
+class Scrollvideo_Shortcode {
 
     public static function register() {
         add_shortcode( 'scrollvideo', array( __CLASS__, 'render' ) );
@@ -17,7 +17,7 @@ class SV_Shortcode {
     public static function register_assets() {
         wp_register_script(
             'gsap-core',
-            'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',
+            SCROLLVIDEO_PLUGIN_URL . 'vendor/gsap/gsap.min.js',
             array(),
             '3.12.5',
             true
@@ -25,7 +25,7 @@ class SV_Shortcode {
 
         wp_register_script(
             'gsap-scrolltrigger',
-            'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',
+            SCROLLVIDEO_PLUGIN_URL . 'vendor/gsap/ScrollTrigger.min.js',
             array( 'gsap-core' ),
             '3.12.5',
             true
