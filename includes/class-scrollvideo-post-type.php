@@ -11,18 +11,18 @@ class Scrollvideo_Post_Type {
 
     public static function register_post_type() {
         $labels = array(
-            'name'               => __( 'Scroll Videos', 'scrollvideo' ),
-            'singular_name'      => __( 'Scroll Video', 'scrollvideo' ),
-            'add_new'            => __( 'Add New', 'scrollvideo' ),
-            'add_new_item'       => __( 'Add New Scroll Video', 'scrollvideo' ),
-            'edit_item'          => __( 'Edit Scroll Video', 'scrollvideo' ),
-            'new_item'           => __( 'New Scroll Video', 'scrollvideo' ),
-            'view_item'          => __( 'View Scroll Video', 'scrollvideo' ),
-            'search_items'       => __( 'Search Scroll Videos', 'scrollvideo' ),
-            'not_found'          => __( 'No scroll videos found.', 'scrollvideo' ),
-            'not_found_in_trash' => __( 'No scroll videos found in Trash.', 'scrollvideo' ),
-            'all_items'          => __( 'All Scroll Videos', 'scrollvideo' ),
-            'menu_name'          => __( 'Scroll Video', 'scrollvideo' ),
+            'name'               => __( 'Scroll Videos', 'scroll-video' ),
+            'singular_name'      => __( 'Scroll Video', 'scroll-video' ),
+            'add_new'            => __( 'Add New', 'scroll-video' ),
+            'add_new_item'       => __( 'Add New Scroll Video', 'scroll-video' ),
+            'edit_item'          => __( 'Edit Scroll Video', 'scroll-video' ),
+            'new_item'           => __( 'New Scroll Video', 'scroll-video' ),
+            'view_item'          => __( 'View Scroll Video', 'scroll-video' ),
+            'search_items'       => __( 'Search Scroll Videos', 'scroll-video' ),
+            'not_found'          => __( 'No scroll videos found.', 'scroll-video' ),
+            'not_found_in_trash' => __( 'No scroll videos found in Trash.', 'scroll-video' ),
+            'all_items'          => __( 'All Scroll Videos', 'scroll-video' ),
+            'menu_name'          => __( 'Scroll Video', 'scroll-video' ),
         );
 
         $args = array(

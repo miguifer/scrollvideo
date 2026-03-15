@@ -17,7 +17,7 @@ class Scrollvideo_Meta_Boxes {
     public static function add_meta_boxes() {
         add_meta_box(
             'scrollvideo_video_settings',
-            __( 'Video Settings', 'scrollvideo' ),
+            __( 'Video Settings', 'scroll-video' ),
             array( __CLASS__, 'render_settings_box' ),
             'scrollvideo',
             'normal',
@@ -26,7 +26,7 @@ class Scrollvideo_Meta_Boxes {
 
         add_meta_box(
             'scrollvideo_shortcode_box',
-            __( 'Shortcode', 'scrollvideo' ),
+            __( 'Shortcode', 'scroll-video' ),
             array( __CLASS__, 'render_shortcode_box' ),
             'scrollvideo',
             'side',
@@ -53,61 +53,61 @@ class Scrollvideo_Meta_Boxes {
         ?>
         <table class="form-table sv-meta-table">
             <tr>
-                <th><label for="sv_video_url"><?php esc_html_e( 'Video URL', 'scrollvideo' ); ?></label></th>
+                <th><label for="sv_video_url"><?php esc_html_e( 'Video URL', 'scroll-video' ); ?></label></th>
                 <td>
                     <input type="url" id="sv_video_url" name="sv_video_url"
                            value="<?php echo esc_attr( $video_url ); ?>"
                            class="regular-text" placeholder="https://example.com/video.mp4" />
                     <button type="button" class="button sv-upload-btn" data-target="sv_video_url">
-                        <?php esc_html_e( 'Upload / Select Video', 'scrollvideo' ); ?>
+                        <?php esc_html_e( 'Upload / Select Video', 'scroll-video' ); ?>
                     </button>
-                    <p class="description"><?php esc_html_e( 'Enter the URL of the video or upload one from the media library.', 'scrollvideo' ); ?></p>
+                    <p class="description"><?php esc_html_e( 'Enter the URL of the video or upload one from the media library.', 'scroll-video' ); ?></p>
                 </td>
             </tr>
             <tr>
-                <th><label for="sv_scroll_height"><?php esc_html_e( 'Scroll Height (vh)', 'scrollvideo' ); ?></label></th>
+                <th><label for="sv_scroll_height"><?php esc_html_e( 'Scroll Height (vh)', 'scroll-video' ); ?></label></th>
                 <td>
                     <input type="number" id="sv_scroll_height" name="sv_scroll_height"
                            value="<?php echo esc_attr( $scroll_height ); ?>"
                            min="100" max="2000" step="10" class="small-text" />
-                    <p class="description"><?php esc_html_e( 'Height of the scroll area in viewport-height units. Larger = slower playback.', 'scrollvideo' ); ?></p>
+                    <p class="description"><?php esc_html_e( 'Height of the scroll area in viewport-height units. Larger = slower playback.', 'scroll-video' ); ?></p>
                 </td>
             </tr>
             <tr>
-                <th><label for="sv_scrub_speed"><?php esc_html_e( 'Scrub Speed', 'scrollvideo' ); ?></label></th>
+                <th><label for="sv_scrub_speed"><?php esc_html_e( 'Scrub Speed', 'scroll-video' ); ?></label></th>
                 <td>
                     <input type="number" id="sv_scrub_speed" name="sv_scrub_speed"
                            value="<?php echo esc_attr( $scrub_speed ); ?>"
                            min="0" max="5" step="0.1" class="small-text" />
-                    <p class="description"><?php esc_html_e( 'Smoothness of the scrub. 0 = instant, higher = smoother.', 'scrollvideo' ); ?></p>
+                    <p class="description"><?php esc_html_e( 'Smoothness of the scrub. 0 = instant, higher = smoother.', 'scroll-video' ); ?></p>
                 </td>
             </tr>
             <tr>
-                <th><label for="sv_pin_video"><?php esc_html_e( 'Pin Video', 'scrollvideo' ); ?></label></th>
+                <th><label for="sv_pin_video"><?php esc_html_e( 'Pin Video', 'scroll-video' ); ?></label></th>
                 <td>
                     <label>
                         <input type="checkbox" id="sv_pin_video" name="sv_pin_video" value="1"
                             <?php checked( $pin_video, '1' ); ?> />
-                        <?php esc_html_e( 'Pin the video to the viewport while scrolling.', 'scrollvideo' ); ?>
+                        <?php esc_html_e( 'Pin the video to the viewport while scrolling.', 'scroll-video' ); ?>
                     </label>
                 </td>
             </tr>
             <tr>
-                <th><label for="sv_start_point"><?php esc_html_e( 'ScrollTrigger Start', 'scrollvideo' ); ?></label></th>
+                <th><label for="sv_start_point"><?php esc_html_e( 'ScrollTrigger Start', 'scroll-video' ); ?></label></th>
                 <td>
                     <input type="text" id="sv_start_point" name="sv_start_point"
                            value="<?php echo esc_attr( $start_point ); ?>"
                            class="regular-text" />
-                    <p class="description"><?php esc_html_e( 'GSAP ScrollTrigger start value, e.g. "top top", "top center".', 'scrollvideo' ); ?></p>
+                    <p class="description"><?php esc_html_e( 'GSAP ScrollTrigger start value, e.g. "top top", "top center".', 'scroll-video' ); ?></p>
                 </td>
             </tr>
             <tr>
-                <th><label for="sv_end_point"><?php esc_html_e( 'ScrollTrigger End', 'scrollvideo' ); ?></label></th>
+                <th><label for="sv_end_point"><?php esc_html_e( 'ScrollTrigger End', 'scroll-video' ); ?></label></th>
                 <td>
                     <input type="text" id="sv_end_point" name="sv_end_point"
                            value="<?php echo esc_attr( $end_point ); ?>"
                            class="regular-text" />
-                    <p class="description"><?php esc_html_e( 'GSAP ScrollTrigger end value, e.g. "bottom bottom", "bottom center".', 'scrollvideo' ); ?></p>
+                    <p class="description"><?php esc_html_e( 'GSAP ScrollTrigger end value, e.g. "bottom bottom", "bottom center".', 'scroll-video' ); ?></p>
                 </td>
             </tr>
         </table>
@@ -116,7 +116,7 @@ class Scrollvideo_Meta_Boxes {
 
     public static function render_shortcode_box( $post ) {
         if ( 'auto-draft' === $post->post_status ) {
-            echo '<p>' . esc_html__( 'Save the post first to generate the shortcode.', 'scrollvideo' ) . '</p>';
+            echo '<p>' . esc_html__( 'Save the post first to generate the shortcode.', 'scroll-video' ) . '</p>';
             return;
         }
 
@@ -126,7 +126,7 @@ class Scrollvideo_Meta_Boxes {
             <input type="text" readonly value="<?php echo esc_attr( $shortcode ); ?>"
                    id="sv_shortcode_field" class="widefat" />
             <button type="button" class="button button-small sv-copy-shortcode" style="margin-top:8px;">
-                <?php esc_html_e( 'Copy Shortcode', 'scrollvideo' ); ?>
+                <?php esc_html_e( 'Copy Shortcode', 'scroll-video' ); ?>
             </button>
         </div>
         <?php
@@ -195,9 +195,9 @@ class Scrollvideo_Meta_Boxes {
         );
 
         wp_localize_script( 'scrollvideo-admin-js', 'scrollvideoAdmin', array(
-            'mediaTitle' => __( 'Select or Upload Video', 'scrollvideo' ),
-            'copied'     => __( 'Copied!', 'scrollvideo' ),
-            'copyLabel'  => __( 'Copy Shortcode', 'scrollvideo' ),
+            'mediaTitle' => __( 'Select or Upload Video', 'scroll-video' ),
+            'copied'     => __( 'Copied!', 'scroll-video' ),
+            'copyLabel'  => __( 'Copy Shortcode', 'scroll-video' ),
         ) );
     }
 }

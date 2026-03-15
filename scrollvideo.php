@@ -7,7 +7,7 @@
  * Author URI:  https://profiles.wordpress.org/miguifer/
  * License:     GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: scrollvideo
+ * Text Domain: scroll-video
  * Requires at least: 5.8
  * Requires PHP: 7.4
  */
