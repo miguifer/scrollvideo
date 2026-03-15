@@ -20,7 +20,7 @@ Each scroll video is managed as its own custom post type entry, giving you full 
 
 * **Custom Post Type** — Each scroll video is a separate entry in the admin panel.
 * **Unique Shortcodes** — Every scroll video generates its own shortcode (`[scrollvideo id="123"]`) for easy embedding.
-* **GSAP ScrollTrigger** — Powered by the industry-leading GSAP animation library loaded via CDN.
+* **GSAP ScrollTrigger** — Powered by the industry-leading GSAP animation library bundled locally.
 * **Configurable Settings** — Control scroll height, scrub speed, pin behavior, and ScrollTrigger start/end points.
 * **Media Library Integration** — Upload or select videos directly from the WordPress media library.
 * **Performance First** — Assets are only loaded on pages where the shortcode is actually used.
@@ -58,7 +58,7 @@ Any format supported by the browser's `<video>` element — typically MP4 (H.264
 
 = Do I need a GSAP license? =
 
-No. GSAP's standard license permits free use on public websites. The library is loaded from a CDN and is not bundled with this plugin.
+No. GSAP's standard license permits free use on public websites. The library is bundled locally with this plugin.
 
 = Can I use multiple scroll videos on the same page? =
 
@@ -81,7 +81,7 @@ No. GSAP and the front-end scripts/styles are only enqueued on pages where the `
 * Custom post type for managing scroll videos.
 * Unique shortcode per scroll video.
 * Configurable scroll height, scrub speed, pin, start/end triggers.
-* GSAP & ScrollTrigger loaded via CDN.
+* GSAP & ScrollTrigger bundled locally.
 * Media library integration for video uploads.
 
 == Upgrade Notice ==
