@@ -1,0 +1,19 @@
+<?php
+/**
+ * Uninstall handler — runs when the plugin is deleted from WordPress.
+ */
+if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+    exit;
+}
+
+// Delete all scrollvideo posts and their meta.
+$posts = get_posts( array(
+    'post_type'      => 'scrollvideo',
+    'posts_per_page' => -1,
+    'post_status'    => 'any',
+    'fields'         => 'ids',
+) );
+
+foreach ( $posts as $post_id ) {
+    wp_delete_post( $post_id, true );
+}

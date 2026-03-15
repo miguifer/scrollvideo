@@ -1,0 +1,29 @@
+/* Scroll Video — Admin Styles */
+.sv-meta-table th {
+    width: 180px;
+    padding: 15px 10px;
+}
+.sv-meta-table td {
+    padding: 15px 10px;
+}
+.sv-meta-table .regular-text {
+    width: 100%;
+    max-width: 400px;
+}
+.sv-shortcode-display input {
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    background: #f0f0f1;
+    cursor: pointer;
+}
+.column-sv_shortcode {
+    width: 240px;
+}
+.column-sv_shortcode code {
+    background: #f0f0f1;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: all;
+}

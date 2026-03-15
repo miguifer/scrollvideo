@@ -1,14 +1,14 @@
+/* Scroll Video — Front-end Styles */
 .sv-wrapper {
-  position: relative;
-  width: 100%;
-  height: 300vh;
+    position: relative;
+    width: 100%;
 }
 
 .sv-wrapper video {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  display: block;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
 }

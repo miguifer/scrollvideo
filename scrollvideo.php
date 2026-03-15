@@ -1,69 +1,51 @@
 <?php
 /**
  * Plugin Name: Scroll Video
- * Version: 1.0
- * Description: Plays a video synchronized with scroll using GSAP ScrollTrigger.
- * Author: miguifer
+ * Description: Create scroll-driven video animations using GSAP ScrollTrigger. Each video is a custom post type with its own shortcode.
+ * Version:     1.0.0
+ * Author:      miguifer
+ * Author URI:  https://profiles.wordpress.org/miguifer/
+ * License:     GPL-2.0-or-later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: scrollvideo
+ * Domain Path: /languages
+ * Requires at least: 5.8
+ * Requires PHP: 7.4
  */
 
-if (!defined('ABSPATH')) exit;
-
-function sv_enqueue_scripts() {
-    wp_enqueue_script(
-        'gsap-core',
-        plugin_dir_url(__FILE__) . 'gsap/gsap.min.js',
-        array(),
-        '3.14.2',
-        true
-    );
-
-    wp_enqueue_script(
-        'gsap-scrolltrigger',
-        plugin_dir_url(__FILE__) . 'gsap/ScrollTrigger.min.js',
-        array('gsap-core'),
-        '3.14.2',
-        true
-    );
-
-    wp_enqueue_script(
-        'sv-front',
-        plugin_dir_url(__FILE__) . 'js/scrollvideo-front.js',
-        array('gsap-core', 'gsap-scrolltrigger'),
-        '1.0',
-        true
-    );
-
-    wp_enqueue_style(
-        'sv-style',
-        plugin_dir_url(__FILE__) . 'css/scrollvideo.css',
-        array(),
-        '1.0'
-    );
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
 }
-add_action('wp_enqueue_scripts', 'sv_enqueue_scripts');
 
+define( 'SCROLLVIDEO_VERSION', '1.0.0' );
+define( 'SCROLLVIDEO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'SCROLLVIDEO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'SCROLLVIDEO_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
-/**
- * [scrollvideo src="https://example.com/video.mp4"]
- */
-function sv_shortcode($atts) {
-    $atts = shortcode_atts(array(
-        'src' => '',
-    ), $atts, 'scrollvideo');
+/* ── Include classes ─────────────────────────────────────── */
+require_once SCROLLVIDEO_PLUGIN_DIR . 'includes/class-sv-post-type.php';
+require_once SCROLLVIDEO_PLUGIN_DIR . 'includes/class-sv-meta-boxes.php';
+require_once SCROLLVIDEO_PLUGIN_DIR . 'includes/class-sv-shortcode.php';
+require_once SCROLLVIDEO_PLUGIN_DIR . 'includes/class-sv-admin.php';
 
-    if (empty($atts['src'])) {
-        return;
-    }
-
-    $id  = 'sv-' . wp_unique_id();
-    $src = esc_url($atts['src']);
-
-    ob_start(); ?>
-    <div class="sv-wrapper" id="<?php echo esc_attr($id); ?>">
-        <video src="<?php echo esc_attr($src); ?>"
-               muted playsinline preload="auto"></video>
-    </div>
-    <?php
-    return ob_get_clean();
+/* ── Boot ────────────────────────────────────────────────── */
+function sv_init() {
+    SV_Post_Type::register();
+    SV_Meta_Boxes::register();
+    SV_Shortcode::register();
+    SV_Admin::register();
 }
-add_shortcode('scrollvideo', 'sv_shortcode');
+add_action( 'plugins_loaded', 'sv_init' );
+
+/* ── Activation: flush rewrite rules ─────────────────────── */
+function sv_activate() {
+    SV_Post_Type::register_post_type();
+    flush_rewrite_rules();
+}
+register_activation_hook( __FILE__, 'sv_activate' );
+
+/* ── Deactivation: flush rewrite rules ───────────────────── */
+function sv_deactivate() {
+    flush_rewrite_rules();
+}
+register_deactivation_hook( __FILE__, 'sv_deactivate' );
