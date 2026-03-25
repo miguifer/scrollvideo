@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Scrollvideo_Shortcode {
 
     public static function register() {
-        add_shortcode( 'scrollvideo', array( __CLASS__, 'render' ) );
+        add_shortcode( 'sleek-scroll-video', array( __CLASS__, 'render' ) );
         add_action( 'wp_enqueue_scripts', array( __CLASS__, 'register_assets' ) );
     }
 
@@ -16,31 +16,28 @@ class Scrollvideo_Shortcode {
      */
     public static function register_assets() {
         wp_register_script(
-            'gsap-core',
-            SCROLLVIDEO_PLUGIN_URL . 'vendor/gsap/gsap.min.js',
+            'gsap',
+            'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',
             array(),
             '3.12.5',
             true
         );
-
         wp_register_script(
-            'gsap-scrolltrigger',
-            SCROLLVIDEO_PLUGIN_URL . 'vendor/gsap/ScrollTrigger.min.js',
-            array( 'gsap-core' ),
+            'scrolltrigger',
+            'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',
+            array( 'gsap' ),
             '3.12.5',
             true
         );
-
         wp_register_script(
-            'scrollvideo-front',
+            'sleek-scroll-video-front',
             SCROLLVIDEO_PLUGIN_URL . 'js/scrollvideo-front.js',
-            array( 'gsap-core', 'gsap-scrolltrigger' ),
+            array( 'gsap', 'scrolltrigger' ),
             SCROLLVIDEO_VERSION,
             true
         );
-
         wp_register_style(
-            'scrollvideo-front-css',
+            'sleek-scroll-video-front-css',
             SCROLLVIDEO_PLUGIN_URL . 'css/scrollvideo.css',
             array(),
             SCROLLVIDEO_VERSION
@@ -48,49 +45,42 @@ class Scrollvideo_Shortcode {
     }
 
     /**
-     * Shortcode: [scrollvideo id="123"]
+     * Shortcode: [sleek-scroll-video id="123"]
      */
     public static function render( $atts ) {
         $atts = shortcode_atts( array(
             'id' => 0,
-        ), $atts, 'scrollvideo' );
+        ), $atts, 'sleek-scroll-video' );
 
         $post_id = absint( $atts['id'] );
-
         if ( ! $post_id ) {
             return '';
         }
-
         $post = get_post( $post_id );
-
         if ( ! $post || 'scrollvideo' !== $post->post_type || 'publish' !== $post->post_status ) {
             return '';
         }
-
         $video_url     = get_post_meta( $post_id, '_sv_video_url', true );
         $scroll_height = get_post_meta( $post_id, '_sv_scroll_height', true );
         $scrub_speed   = get_post_meta( $post_id, '_sv_scrub_speed', true );
         $pin_video     = get_post_meta( $post_id, '_sv_pin_video', true );
         $start_point   = get_post_meta( $post_id, '_sv_start_point', true );
         $end_point     = get_post_meta( $post_id, '_sv_end_point', true );
-
         if ( empty( $video_url ) ) {
             return '';
         }
-
         // Defaults.
         $scroll_height = $scroll_height ? absint( $scroll_height ) : 300;
         $scrub_speed   = '' !== $scrub_speed ? floatval( $scrub_speed ) : 0.3;
         $pin_video     = '1' === $pin_video ? true : false;
         $start_point   = $start_point ? $start_point : 'top top';
         $end_point     = $end_point ? $end_point : 'bottom bottom';
-
         // Enqueue assets only when shortcode is used.
-        wp_enqueue_script( 'scrollvideo-front' );
-        wp_enqueue_style( 'scrollvideo-front-css' );
-
+        wp_enqueue_script( 'gsap' );
+        wp_enqueue_script( 'scrolltrigger' );
+        wp_enqueue_script( 'sleek-scroll-video-front' );
+        wp_enqueue_style( 'sleek-scroll-video-front-css' );
         $wrapper_id = 'sv-' . $post_id;
-
         ob_start();
         ?>
         <div class="sv-wrapper"

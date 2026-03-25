@@ -1,4 +1,4 @@
-=== Scroll Video ===
+=== Sleek Scroll Video ===
 Contributors: miguifer
 Tags: video, scroll, animation, gsap, scrolltrigger
 Requires at least: 5.8
@@ -12,14 +12,14 @@ Create scroll-driven video animations powered by GSAP ScrollTrigger. Each video 
 
 == Description ==
 
-**Scroll Video** lets you create beautiful scroll-driven video playback animations on your WordPress site. As the user scrolls, the video plays forward; scroll back, and the video reverses.
+**Sleek Scroll Video** lets you create beautiful scroll-driven video playback animations on your WordPress site. As the user scrolls, the video plays forward; scroll back, and the video reverses.
 
-Each scroll video is managed as its own custom post type entry, giving you full control over settings and generating a unique shortcode you can embed anywhere.
+Each Sleek Scroll Video is managed as its own custom post type entry, giving you full control over settings and generating a unique shortcode you can embed anywhere.
 
 = Features =
 
-* **Custom Post Type** — Each scroll video is a separate entry in the admin panel.
-* **Unique Shortcodes** — Every scroll video generates its own shortcode (`[scrollvideo id="123"]`) for easy embedding.
+* **Custom Post Type** — Each Sleek Scroll Video is a separate entry in the admin panel.
+* **Unique Shortcodes** — Every Sleek Scroll Video generates its own shortcode (`[sleek-scroll-video id="123"]`) for easy embedding.
 * **GSAP ScrollTrigger** — Powered by the industry-leading GSAP animation library bundled locally.
 * **Configurable Settings** — Control scroll height, scrub speed, pin behavior, and ScrollTrigger start/end points.
 * **Media Library Integration** — Upload or select videos directly from the WordPress media library.
@@ -27,7 +27,7 @@ Each scroll video is managed as its own custom post type entry, giving you full 
 
 = How It Works =
 
-1. Go to **Scroll Video → Add New** in your admin panel.
+1. Go to **Sleek Scroll Video → Add New** in your admin panel.
 2. Give it a title and configure the video URL plus animation settings.
 3. Save/publish the post.
 4. Copy the generated shortcode from the sidebar.
@@ -48,7 +48,7 @@ GSAP's Standard License ("No Charge") permits free use in products that are them
 
 1. Upload the `scrollvideo` folder to `/wp-content/plugins/`.
 2. Activate the plugin through the **Plugins** menu in WordPress.
-3. Navigate to **Scroll Video** in the admin sidebar to create your first scroll video.
+3. Navigate to **Sleek Scroll Video** in the admin sidebar to create your first Sleek Scroll Video.
 
 == Frequently Asked Questions ==
 
@@ -70,16 +70,16 @@ No. GSAP and the front-end scripts/styles are only enqueued on pages where the `
 
 == Screenshots ==
 
-1. The Scroll Video admin listing showing shortcodes for each entry.
+1. The Sleek Scroll Video admin listing showing shortcodes for each entry.
 2. The edit screen with video settings and shortcode display.
-3. A scroll video in action on the front-end.
+3. A Sleek Scroll Video in action on the front-end.
 
 == Changelog ==
 
 = 1.0.0 =
 * Initial release.
-* Custom post type for managing scroll videos.
-* Unique shortcode per scroll video.
+* Custom post type for managing Sleek Scroll Videos.
+* Unique shortcode per Sleek Scroll Video.
 * Configurable scroll height, scrub speed, pin, start/end triggers.
 * GSAP & ScrollTrigger bundled locally.
 * Media library integration for video uploads.
