@@ -1,6 +1,6 @@
 === Sleek Scroll Video ===
 Contributors: miguifer
-Tags: video, scroll, animation, gsap, scrolltrigger
+Tags: video, scroll, animation
 Requires at least: 5.8
 Tested up to: 6.9
 Requires PHP: 7.4
@@ -8,7 +8,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Create scroll-driven video animations powered by GSAP ScrollTrigger. Each video is a custom post type with its own shortcode.
+Create scroll-driven video animations with your own JavaScript and CSS. Each video is a custom post type with its own shortcode.
 
 == Description ==
 
@@ -20,8 +20,8 @@ Each Sleek Scroll Video is managed as its own custom post type entry, giving you
 
 * **Custom Post Type** — Each Sleek Scroll Video is a separate entry in the admin panel.
 * **Unique Shortcodes** — Every Sleek Scroll Video generates its own shortcode (`[sleek-scroll-video id="123"]`) for easy embedding.
-* **GSAP ScrollTrigger** — Powered by the industry-leading GSAP animation library bundled locally.
-* **Configurable Settings** — Control scroll height, scrub speed, pin behavior, and ScrollTrigger start/end points.
+* **No external dependencies** — All animation logic is handled by the plugin's own JavaScript and CSS.
+* **Configurable Settings** — Control scroll height, scrub speed, and scroll start/end points.
 * **Media Library Integration** — Upload or select videos directly from the WordPress media library.
 * **Performance First** — Assets are only loaded on pages where the shortcode is actually used.
 
@@ -30,23 +30,15 @@ Each Sleek Scroll Video is managed as its own custom post type entry, giving you
 1. Go to **Sleek Scroll Video → Add New** in your admin panel.
 2. Give it a title and configure the video URL plus animation settings.
 3. Save/publish the post.
+
 4. Copy the generated shortcode from the sidebar.
 5. Paste the shortcode into any page, post, or widget.
 
-= Third-Party Libraries =
 
-This plugin includes the GSAP (GreenSock Animation Platform) library v3.12.5 to provide scroll-driven video playback. GSAP is developed by GreenSock Inc. The minified files are bundled locally inside the `vendor/gsap/` folder. The unminified source code is available at:
-
-* **GSAP source:** [https://github.com/greensock/GSAP](https://github.com/greensock/GSAP)
-* **GSAP on npm:** [https://www.npmjs.com/package/gsap](https://www.npmjs.com/package/gsap)
-* **GreenSock website:** [https://gsap.com/](https://gsap.com/)
-* **GSAP Standard License:** [https://gsap.com/community/standard-license/](https://gsap.com/community/standard-license/)
-
-GSAP's Standard License ("No Charge") permits free use in products that are themselves free. This plugin is distributed under GPLv2 or later.
 
 == Installation ==
 
-1. Upload the `scrollvideo` folder to `/wp-content/plugins/`.
+1. Upload the `sleek-scroll-video` folder to `/wp-content/plugins/`.
 2. Activate the plugin through the **Plugins** menu in WordPress.
 3. Navigate to **Sleek Scroll Video** in the admin sidebar to create your first Sleek Scroll Video.
 
@@ -56,9 +48,6 @@ GSAP's Standard License ("No Charge") permits free use in products that are them
 
 Any format supported by the browser's `<video>` element — typically MP4 (H.264), WebM, and Ogg.
 
-= Do I need a GSAP license? =
-
-No. GSAP's standard license permits free use on public websites. The library is bundled locally with this plugin.
 
 = Can I use multiple scroll videos on the same page? =
 
@@ -81,7 +70,7 @@ No. GSAP and the front-end scripts/styles are only enqueued on pages where the `
 * Custom post type for managing Sleek Scroll Videos.
 * Unique shortcode per Sleek Scroll Video.
 * Configurable scroll height, scrub speed, pin, start/end triggers.
-* GSAP & ScrollTrigger bundled locally.
+
 * Media library integration for video uploads.
 
 == Upgrade Notice ==

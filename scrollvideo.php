@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: Sleek Scroll Video
- * Description: Create scroll-driven video animations using GSAP ScrollTrigger. Each video is a custom post type with its own shortcode.
+ * Description: Create scroll-driven video animations with your own JavaScript and CSS. Each video is a custom post type with its own shortcode.
  * Version:     1.0.0
  * Author:      miguifer
  * Author URI:  https://profiles.wordpress.org/miguifer/
  * License:     GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: sleek-scroll-video
+ * Text Domain: scrollvideo
  * Requires at least: 5.8
  * Requires PHP: 7.4
  */

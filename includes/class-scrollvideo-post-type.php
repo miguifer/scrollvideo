@@ -11,18 +11,18 @@ class Scrollvideo_Post_Type {
 
     public static function register_post_type() {
         $labels = array(
-            'name'               => __( 'Sleek Scroll Videos', 'sleek-scroll-video' ),
-            'singular_name'      => __( 'Sleek Scroll Video', 'sleek-scroll-video' ),
-            'add_new'            => __( 'Add New', 'sleek-scroll-video' ),
-            'add_new_item'       => __( 'Add New Sleek Scroll Video', 'sleek-scroll-video' ),
-            'edit_item'          => __( 'Edit Sleek Scroll Video', 'sleek-scroll-video' ),
-            'new_item'           => __( 'New Sleek Scroll Video', 'sleek-scroll-video' ),
-            'view_item'          => __( 'View Sleek Scroll Video', 'sleek-scroll-video' ),
-            'search_items'       => __( 'Search Sleek Scroll Videos', 'sleek-scroll-video' ),
-            'not_found'          => __( 'No sleek scroll videos found.', 'sleek-scroll-video' ),
-            'not_found_in_trash' => __( 'No sleek scroll videos found in Trash.', 'sleek-scroll-video' ),
-            'all_items'          => __( 'All Sleek Scroll Videos', 'sleek-scroll-video' ),
-            'menu_name'          => __( 'Sleek Scroll Video', 'sleek-scroll-video' ),
+            'name'               => __( 'Sleek Scroll Videos', 'scrollvideo' ),
+            'singular_name'      => __( 'Sleek Scroll Video', 'scrollvideo' ),
+            'add_new'            => __( 'Add New', 'scrollvideo' ),
+            'add_new_item'       => __( 'Add New Sleek Scroll Video', 'scrollvideo' ),
+            'edit_item'          => __( 'Edit Sleek Scroll Video', 'scrollvideo' ),
+            'new_item'           => __( 'New Sleek Scroll Video', 'scrollvideo' ),
+            'view_item'          => __( 'View Sleek Scroll Video', 'scrollvideo' ),
+            'search_items'       => __( 'Search Sleek Scroll Videos', 'scrollvideo' ),
+            'not_found'          => __( 'No sleek scroll videos found.', 'scrollvideo' ),
+            'not_found_in_trash' => __( 'No sleek scroll videos found in Trash.', 'scrollvideo' ),
+            'all_items'          => __( 'All Sleek Scroll Videos', 'scrollvideo' ),
+            'menu_name'          => __( 'Sleek Scroll Video', 'scrollvideo' ),
         );
 
         $args = array(

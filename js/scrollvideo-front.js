@@ -1,39 +1,43 @@
 (function () {
     'use strict';
 
-    if ( typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' ) {
-        return;
-    }
+    // Custom scroll-to-video logic (no GSAP)
+    document.querySelectorAll('.sv-wrapper').forEach(function (wrapper) {
+        var video = wrapper.querySelector('video');
+        if (!video) return;
 
-    gsap.registerPlugin( ScrollTrigger );
+        var scrollHeight = parseInt(wrapper.dataset.svHeight, 10) || 300;
+        var scrub = parseFloat(wrapper.dataset.svScrub) || 0.3;
+        // pin, start, end are ignored in this simple version
 
-    document.querySelectorAll( '.sv-wrapper' ).forEach( function ( wrapper ) {
-        var video = wrapper.querySelector( 'video' );
-        if ( ! video ) return;
-
-        var scrub  = parseFloat( wrapper.dataset.svScrub )  || 0.3;
-        var pin    = wrapper.dataset.svPin !== '0';
-        var start  = wrapper.dataset.svStart || 'top top';
-        var end    = wrapper.dataset.svEnd   || 'bottom bottom';
-
-        function init() {
-            gsap.to( video, {
-                currentTime: video.duration,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: wrapper,
-                    start: start,
-                    end: end,
-                    scrub: scrub,
-                    pin: pin,
-                },
-            });
+        function updateVideoOnScroll() {
+            var rect = wrapper.getBoundingClientRect();
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            var scrollStart = rect.top + window.pageYOffset - windowHeight;
+            var scrollEnd = rect.top + window.pageYOffset + rect.height;
+            var scrollPos = window.pageYOffset;
+            var progress = (scrollPos - scrollStart) / (scrollEnd - scrollStart);
+            progress = Math.max(0, Math.min(1, progress));
+            if (video.duration) {
+                video.currentTime = video.duration * progress;
+            }
         }
 
-        if ( video.readyState >= 1 ) {
-            init();
-        } else {
-            video.addEventListener( 'loadedmetadata', init );
+        function onScrollOrResize() {
+            updateVideoOnScroll();
+        }
+
+        function onLoadedMetadata() {
+            updateVideoOnScroll();
+        }
+
+        window.addEventListener('scroll', onScrollOrResize);
+        window.addEventListener('resize', onScrollOrResize);
+        video.addEventListener('loadedmetadata', onLoadedMetadata);
+
+        // Initial update
+        if (video.readyState >= 1) {
+            updateVideoOnScroll();
         }
     });
 })();

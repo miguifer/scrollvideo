@@ -16,23 +16,9 @@ class Scrollvideo_Shortcode {
      */
     public static function register_assets() {
         wp_register_script(
-            'gsap',
-            'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',
-            array(),
-            '3.12.5',
-            true
-        );
-        wp_register_script(
-            'scrolltrigger',
-            'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',
-            array( 'gsap' ),
-            '3.12.5',
-            true
-        );
-        wp_register_script(
             'sleek-scroll-video-front',
             SCROLLVIDEO_PLUGIN_URL . 'js/scrollvideo-front.js',
-            array( 'gsap', 'scrolltrigger' ),
+            array(),
             SCROLLVIDEO_VERSION,
             true
         );
@@ -45,7 +31,7 @@ class Scrollvideo_Shortcode {
     }
 
     /**
-     * Shortcode: [sleek-scroll-video id="123"]
+    * Shortcode: [sleek-scroll-video id="123"]
      */
     public static function render( $atts ) {
         $atts = shortcode_atts( array(
@@ -76,10 +62,9 @@ class Scrollvideo_Shortcode {
         $start_point   = $start_point ? $start_point : 'top top';
         $end_point     = $end_point ? $end_point : 'bottom bottom';
         // Enqueue assets only when shortcode is used.
-        wp_enqueue_script( 'gsap' );
-        wp_enqueue_script( 'scrolltrigger' );
         wp_enqueue_script( 'sleek-scroll-video-front' );
         wp_enqueue_style( 'sleek-scroll-video-front-css' );
+        // Only local script is enqueued
         $wrapper_id = 'sv-' . $post_id;
         ob_start();
         ?>
