@@ -55,7 +55,7 @@ Yes. Each shortcode instance creates an independent scroll video with its own se
 
 = Are assets loaded on every page? =
 
-No. GSAP and the front-end scripts/styles are only enqueued on pages where the `[scrollvideo]` shortcode is present.
+No. GSAP and the front-end scripts/styles are only enqueued on pages where the `[sleek-scroll-video]` shortcode is present.
 
 == Screenshots ==
 

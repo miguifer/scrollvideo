@@ -6,9 +6,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Scrollvideo_Admin {
 
     public static function register() {
-        add_filter( 'manage_scrollvideo_posts_columns', array( __CLASS__, 'add_columns' ) );
-        add_action( 'manage_scrollvideo_posts_custom_column', array( __CLASS__, 'render_columns' ), 10, 2 );
-        add_filter( 'plugin_action_links_' . SCROLLVIDEO_PLUGIN_BASENAME, array( __CLASS__, 'plugin_action_links' ) );
+        add_filter( 'manage_sleek-scroll-video_posts_columns', array( __CLASS__, 'add_columns' ) );
+        add_action( 'manage_sleek-scroll-video_posts_custom_column', array( __CLASS__, 'render_columns' ), 10, 2 );
+        add_filter( 'plugin_action_links_' . SLEEK_SCROLL_VIDEO_PLUGIN_BASENAME, array( __CLASS__, 'plugin_action_links' ) );
     }
 
     /**
@@ -51,9 +51,9 @@ class Scrollvideo_Admin {
      * Add "Manage" link on Plugins page.
      */
     public static function plugin_action_links( $links ) {
-        $manage_link = '<a href="' . esc_url( admin_url( 'edit.php?post_type=scrollvideo' ) ) . '">'
-                 . esc_html__( 'Manage', 'sleek-scroll-video' )
-                 . '</a>';
+        $manage_link = '<a href="' . esc_url( admin_url( 'edit.php?post_type=sleek-scroll-video' ) ) . '">'
+             . esc_html__( 'Manage', 'sleek-scroll-video' )
+             . '</a>';
         array_unshift( $links, $manage_link );
         return $links;
     }
