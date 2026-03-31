@@ -3,32 +3,32 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class Sleek_Scroll_Video_Meta_Boxes {
+class Scrollvideo_Meta_Boxes {
 
-    const NONCE_ACTION = 'sleek_scroll_video_save_meta';
-    const NONCE_NAME   = 'sleek_scroll_video_meta_nonce';
+    const NONCE_ACTION = 'scrollvideo_save_meta';
+    const NONCE_NAME   = 'scrollvideo_meta_nonce';
 
     public static function register() {
         add_action( 'add_meta_boxes', array( __CLASS__, 'add_meta_boxes' ) );
-        add_action( 'save_post_sleek-scroll-video', array( __CLASS__, 'save' ), 10, 2 );
+        add_action( 'save_post_scrollvideo', array( __CLASS__, 'save' ), 10, 2 );
         add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_admin_assets' ) );
     }
 
     public static function add_meta_boxes() {
         add_meta_box(
-            'sleek_scroll_video_settings',
+            'scrollvideo_video_settings',
             __( 'Video Settings', 'sleek-scroll-video' ),
             array( __CLASS__, 'render_settings_box' ),
-            'sleek-scroll-video',
+            'scrollvideo',
             'normal',
             'high'
         );
 
         add_meta_box(
-            'sleek_scroll_video_shortcode_box',
+            'scrollvideo_shortcode_box',
             __( 'Shortcode', 'sleek-scroll-video' ),
             array( __CLASS__, 'render_shortcode_box' ),
-            'sleek-scroll-video',
+            'scrollvideo',
             'side',
             'high'
         );
@@ -174,28 +174,28 @@ class Sleek_Scroll_Video_Meta_Boxes {
     public static function enqueue_admin_assets( $hook ) {
 
         $screen = get_current_screen();
-        if ( ! $screen || 'sleek-scroll-video' !== $screen->post_type ) {
+        if ( ! $screen || 'scrollvideo' !== $screen->post_type ) {
             return;
         }
 
         wp_enqueue_media();
 
         wp_enqueue_style(
-            'sleek-scroll-video-admin-css',
-            SLEEK_SCROLL_VIDEO_PLUGIN_URL . 'css/sleek-scroll-video-admin.css',
+            'scrollvideo-admin-css',
+            SCROLLVIDEO_PLUGIN_URL . 'css/scrollvideo-admin.css',
             array(),
-            SLEEK_SCROLL_VIDEO_VERSION
+            SCROLLVIDEO_VERSION
         );
 
         wp_enqueue_script(
-            'sleek-scroll-video-admin-js',
-            SLEEK_SCROLL_VIDEO_PLUGIN_URL . 'js/sleek-scroll-video-admin.js',
+            'scrollvideo-admin-js',
+            SCROLLVIDEO_PLUGIN_URL . 'js/scrollvideo-admin.js',
             array( 'jquery' ),
-            SLEEK_SCROLL_VIDEO_VERSION,
+            SCROLLVIDEO_VERSION,
             true
         );
 
-        wp_localize_script( 'sleek-scroll-video-admin-js', 'sleekScrollVideoAdmin', array(
+        wp_localize_script( 'scrollvideo-admin-js', 'scrollvideoAdmin', array(
             'mediaTitle' => __( 'Select or Upload Video', 'sleek-scroll-video' ),
             'copied'     => __( 'Copied!', 'sleek-scroll-video' ),
             'copyLabel'  => __( 'Copy Shortcode', 'sleek-scroll-video' ),
