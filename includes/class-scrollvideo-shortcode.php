@@ -8,8 +8,6 @@ class Scrollvideo_Shortcode {
     public static function register() {
         add_shortcode( 'sleek-scroll-video', array( __CLASS__, 'render' ) );
         add_action( 'wp_enqueue_scripts', array( __CLASS__, 'register_assets' ) );
-        // Register the shortcode with a translatable name
-        add_shortcode( __( 'sleek-scroll-video', 'scrollvideo' ), array( __CLASS__, 'render' ) );
     }
 
     /**

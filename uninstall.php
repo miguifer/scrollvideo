@@ -6,7 +6,7 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
     exit;
 }
 
-// Delete all sleek-scroll-video posts and their meta.
+// Delete all scrollvideo posts and their meta.
 $posts = get_posts( array(
     'post_type'      => 'scrollvideo',
     'posts_per_page' => -1,
