@@ -31,7 +31,7 @@ class Scrollvideo_Post_Type {
             'show_ui'             => true,
             'show_in_menu'        => true,
             'menu_position'       => 25,
-            'menu_icon'           => 'dashicons-video-alt3',
+            'menu_icon'           => SCROLLVIDEO_PLUGIN_URL . 'media/logo.png',
             'capability_type'     => 'post',
             'supports'            => array( 'title' ),
             'has_archive'         => false,

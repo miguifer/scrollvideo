@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    // Custom scroll-to-video logic (no GSAP)
+    // Custom scroll-to-video logic
     document.querySelectorAll('.sv-wrapper').forEach(function (wrapper) {
         var video = wrapper.querySelector('video');
         if (!video) return;

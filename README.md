@@ -1,6 +1,6 @@
 # Sleek Scroll Video
 
-A WordPress plugin that creates scroll-driven video animations with your own JavaScript and CSS (no GSAP).
+A WordPress plugin that creates scroll-driven video animations with your own JavaScript and CSS.
 
 ## Features
 
